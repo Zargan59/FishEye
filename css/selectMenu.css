@@ -1,0 +1,58 @@
+.triContent{
+    margin: 25px 0 ;
+    font-size: 24px;
+    font-weight: 700;
+    display: flex;
+    gap: 20px;
+    align-items: baseline;
+    /* border: 2px solid green; */
+}
+.triContent p{
+    margin: 25px 0;
+}
+.buttonSection {
+    display: flex;
+    border-radius: 5px;
+    background-color: #901C1C;
+    width: 140px;
+    height: 50px;
+    flex-direction: column;
+    /* border: 2px solid green; */
+    overflow: hidden;
+}
+
+.buttonSection .vraiButton{
+    position: absolute;
+    /* background-color: green; */
+    opacity: 0.6;
+    width:140px;
+    height: 50px;
+    z-index: 10;
+}
+hr{
+    width: 80%;
+    color: white;
+    margin: 0 auto;
+}
+.firstOption img{
+    margin-left: 25px;
+}
+.open{
+    transform: rotate(270deg);
+}
+.close{
+    transform: rotate(90deg);
+}
+.buttonSection button{
+    min-height: 50px;
+    border-radius: 5px;
+    border: 0;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    background-color: #901C1C;
+}
+.buttonSection button:hover{
+    background-color: #630d0d;
+    opacity: 0.8;
+}
