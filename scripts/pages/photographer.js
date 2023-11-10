@@ -11,7 +11,7 @@ const ID = urlSearchParams.get("id");
 const MAIN = document.getElementById("main");
 
 async function getInfos() {
-  const dataRequest = await fetch("../../data/photographers.json");
+  const dataRequest = await fetch("data/photographers.json");
   const data = await dataRequest.json();
   const photographerTab = data.photographers;
  
