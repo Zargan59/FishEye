@@ -127,7 +127,7 @@ async function allLikes() {
   const Like = document.createElement("p");
   Like.classList.add("price");
   const coeur = document.createElement("img");
-  coeur.setAttribute("src", "../../assets/icons/coeur.svg");
+  coeur.setAttribute("src", "assets/icons/coeur.svg");
   coeur.setAttribute("alt", "likes");
 
   likeContent.appendChild(Like);

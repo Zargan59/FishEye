@@ -91,7 +91,7 @@ function SelectMenu(triContent,media) {
   });
   function createChevron() {
     const tee = document.createElement("img");
-    tee.setAttribute("src", "../../assets/images/Chevron.svg");
+    tee.setAttribute("src", "assets/images/Chevron.svg");
     tee.setAttribute("alt", "close");
     tee.setAttribute("class", "close");
     option1.appendChild(tee);
