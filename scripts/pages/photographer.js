@@ -150,6 +150,7 @@ async function PhotoContent(media, photographer) {
   Content.appendChild(triContent);
   Content.appendChild(photoContent);
 }
+
 async function calculateLike(Like) {
   const allLikes = document.querySelectorAll(".nombreLike");
   let totalLike = 0;
@@ -194,8 +195,6 @@ async function triData(photographer) {
         return 1;
       }
     });
-  } else {
-    console.log("Aucun des choix");
   }
   displayMedia(photographer);
 }

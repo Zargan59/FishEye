@@ -20,7 +20,6 @@ async function displayData(photographers) {
     const photographerModel = photographerTemplate(photographer);
     //Permet d'afficher le DOM du photographe
     const userCardDOM = photographerModel.getUserCardDOM();
-    // console.log(userCardDOM);
     photographersSection.appendChild(userCardDOM);
   });
 }

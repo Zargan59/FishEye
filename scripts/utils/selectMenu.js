@@ -1,9 +1,4 @@
-// SelectMenu.focus()
-
-
-function SelectMenu(triContent,media) {
-  // document.addEventListener("keydown", keyPressTri)
-
+function SelectMenu(triContent, media) {
   const tri = document.createElement("p");
   tri.innerHTML = "Trier par";
   triContent.appendChild(tri);
@@ -15,33 +10,32 @@ function SelectMenu(triContent,media) {
   div.classList.add("buttonSection");
   const trueButton = document.createElement("div");
   trueButton.classList.add("vraiButton");
-  trueButton.setAttribute("tabindex","0")
-  div.setAttribute("tabindex", "-1")
+  trueButton.setAttribute("tabindex", "0");
+  div.setAttribute("tabindex", "-1");
 
   const option1 = document.createElement("button");
   option1.classList.add("firstOption");
-  option1.setAttribute("tabindex","-1")
+  option1.setAttribute("tabindex", "-1");
   option1.innerHTML = pop;
   createChevron();
 
   const option2 = document.createElement("button");
   option2.innerHTML = date;
-  option2.setAttribute("tabindex", "-1")
+  option2.setAttribute("tabindex", "-1");
   const option3 = document.createElement("button");
   option3.innerHTML = titre;
-  option3.setAttribute('tabindex', "-1")
+  option3.setAttribute("tabindex", "-1");
 
   const hr1 = document.createElement("hr");
   const hr2 = document.createElement("hr");
 
-  div.addEventListener("keydown",e =>{
-    if(e.key==="Enter"){
-      OpenMenu()
-    } 
-    else if(e.key ==="Escape"){
-      CloseMenu()
+  div.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      OpenMenu();
+    } else if (e.key === "Escape") {
+      CloseMenu();
     }
-  })
+  });
 
   div.addEventListener("click", (e) => {
     const firstChoice = document.querySelector(".vraiButton");
@@ -53,7 +47,7 @@ function SelectMenu(triContent,media) {
       option1.innerHTML = choice;
       createChevron();
       CloseMenu();
-      triData(media)
+      triData(media);
     }
   });
   let menuOpen = false;
@@ -72,8 +66,8 @@ function SelectMenu(triContent,media) {
     chevronIcon.classList.add("open");
     chevronIcon.classList.remove("close");
     menuOpen = true;
-    option2.setAttribute("tabindex", "0")
-    option3.setAttribute('tabindex', "0")
+    option2.setAttribute("tabindex", "0");
+    option3.setAttribute("tabindex", "0");
   }
 
   function CloseMenu() {
@@ -82,8 +76,8 @@ function SelectMenu(triContent,media) {
     chevronIcon.classList.remove("open");
     div.style.height = "50px";
     menuOpen = false;
-    option2.setAttribute("tabindex", "-1")
-    option3.setAttribute('tabindex', "-1")
+    option2.setAttribute("tabindex", "-1");
+    option3.setAttribute("tabindex", "-1");
   }
 
   trueButton.addEventListener("click", () => {
@@ -104,12 +98,4 @@ function SelectMenu(triContent,media) {
       CloseMenu();
     }
   }
-
-
-  //J'écoute chaque évènement et j'écoute la commande de l'utilisateur pour lancer l'évènement adéquate
-  //Une fois que j'ai changé d'évènement, je supprime l'évènement pour pas qu'il ne se produise
-  document.addEventListener("focusin", e=>{
-    console.log(e)});
-
 }
-
