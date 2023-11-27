@@ -6,6 +6,7 @@ function SelectMenu(triContent, media) {
   const date = "Date";
   const pop = "Popularité";
   const titre = "Titre";
+  
   const div = document.createElement("div");
   div.classList.add("buttonSection");
   const trueButton = document.createElement("div");
@@ -14,6 +15,7 @@ function SelectMenu(triContent, media) {
   div.setAttribute("tabindex", "-1");
 
   const option1 = document.createElement("button");
+  option1.setAttribute("aria-hidden", "false")
   option1.classList.add("firstOption");
   option1.setAttribute("tabindex", "-1");
   option1.innerHTML = pop;
@@ -28,6 +30,8 @@ function SelectMenu(triContent, media) {
 
   const hr1 = document.createElement("hr");
   const hr2 = document.createElement("hr");
+  trueButton.setAttribute("aria-label" , option1.textContent )
+
 
   div.addEventListener("keydown", (e) => {
     if (e.key === "Enter") {
@@ -41,10 +45,14 @@ function SelectMenu(triContent, media) {
     const firstChoice = document.querySelector(".vraiButton");
     e.preventDefault();
     if (e.target !== firstChoice) {
+    trueButton.setAttribute("aria-label" , option1.textContent  )
+
       let prevChoice = option1.textContent;
       let choice = e.target.textContent;
       e.target.innerHTML = prevChoice;
       option1.innerHTML = choice;
+  trueButton.setAttribute("aria-label" , choice )
+
       createChevron();
       CloseMenu();
       triData(media);

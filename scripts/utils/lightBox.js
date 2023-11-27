@@ -32,6 +32,7 @@ function keyPressLightBox(e) {
 
 function constructorLightBox(mediaClicked) {
   const main = document.querySelector("main");
+  main.setAttribute("aria-hidden","true")
   const body = document.querySelector("body");
   body.style.overflow = "hidden";
   const lightBoxContent = document.createElement("div");
@@ -157,6 +158,8 @@ function closeLightbox() {
   lightBoxContent.remove();
   const body = document.querySelector("body");
   body.style.overflow = "visible";
+  const main = document.querySelector("main");
+  main.setAttribute("aria-hidden","false")
 }
 
 function loadImage(i) {

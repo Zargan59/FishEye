@@ -34,7 +34,6 @@ async function init() {
   getPhotographMedia(media);
   PhotographName(photographerInfo);
   displayData(photographer);
-  // displayMedia(media,photographer)
   triData(photographer);
   Price(photographerInfo);
 }
@@ -73,37 +72,6 @@ async function PhotographName(photographerInfo) {
   photographFirstName = photographFirstName.replace("-", " ");
 }
 
-// async function PresentationTemplate(photographer) {
-//   const { name, portrait, city, country, tagline } = photographer;
-
-//   const infoContent = document.querySelector(".photograph-header");
-
-//   const photographProfile = document.createElement("div");
-//   photographProfile.classList.add("photographer-profile");
-
-//   const NAME = document.createElement("h2");
-//   NAME.innerHTML = name;
-
-//   const CITY = document.createElement("p");
-//   CITY.classList.add("location");
-//   CITY.innerHTML = `${city}, ${country}`;
-
-//   const TAGLINE = document.createElement("p");
-//   TAGLINE.innerHTML = tagline;
-//   TAGLINE.classList.add("quote");
-
-//   photographProfile.appendChild(NAME);
-//   photographProfile.appendChild(CITY);
-//   photographProfile.appendChild(TAGLINE);
-
-//   const IMG = document.createElement("img");
-//   IMG.setAttribute("alt", name);
-//   const picture = `assets/photographers/Photographers ID Photos/${portrait}`;
-//   IMG.setAttribute("src", picture);
-
-//   infoContent.appendChild(photographProfile);
-//   infoContent.appendChild(IMG);
-// }
 
 async function Price(photographer) {
   const { price } = photographer;

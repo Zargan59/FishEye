@@ -44,7 +44,7 @@ function displayModal() {
   divBackground.classList.add("contact_background");
   modalContent.appendChild(divBackground);
 
-  form.setAttribute("aria-hidden", "true");
+  form.setAttribute("aria-hidden", "false");
   form.setAttribute("role", "form");
 }
 
@@ -63,7 +63,7 @@ function closeModal() {
   const modal = document.getElementById("contact_modal");
   modal.close();
   document.removeEventListener("keydown", keyPress);
-  form.setAttribute("aria-hidden", "false");
+  form.setAttribute("aria-hidden", "true");
 }
 
 function Soumission() {

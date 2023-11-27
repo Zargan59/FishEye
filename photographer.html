@@ -19,13 +19,13 @@
     </header>
     <main id="main">
       <div class="photograph-header">
-        <button class="contact_button" aria-label="Contact Me" tabindex="0">
+        <button class="contact_button" aria-label="Contactez moi" tabindex="0">
           Contactez-moi
         </button>
       </div>
     </main>
-    <dialog id="contact_modal" role="alertdialog" aria-modal="true">
-      <div class="modal">
+    <dialog id="contact_modal"  role="alertdialog" aria-modal="true">
+      <div class="modal" aria-hidden="true">
         <header>
           <h2>Contactez-moi</h2>
           <img
@@ -36,14 +36,16 @@
         </header>
         <form role="form" aria-current="true">
           <div class="firstName">
-            <label for="Prénom" aria-label="FirstName">Prénom</label>
+            <label for="firstName" aria-label="firstName">Prénom</label>
             <input
               type="text"
-              name="Prénom"
+              name="firstName"
+              aria-required="true"QMq
+              
               aria-label="FirstName"
-              id="Prénom"
-              aria-labelledby="Prénom"
-              aria-describedby="FirstName"
+              id="firstName"
+              aria-labelledby="firstName"
+              aria-describedby="firstName"
             />
           </div>
           <div class="lastName">

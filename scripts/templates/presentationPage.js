@@ -1,7 +1,7 @@
 let info = [];
 
 function photographHeader(photographer) {
-  const { name, portrait, city, country, tagline, price, id } = photographer;
+  const { name, portrait, city, country, tagline } = photographer;
   const picture = `assets/photographers/Photographers ID Photos/${portrait}`;
   function getUserCardDOM() {
     const infoContent = document.querySelector(".photograph-header");
@@ -44,7 +44,7 @@ function mediaFactory(data) {
   function constructMedia() {
     const imageContent = document.createElement("div");
     imageContent.classList.add("imageContent");
-    imageContent.setAttribute("tabindex", "0");
+    imageContent.setAttribute("tabindex", "-1");
 
     const titreContent = document.createElement("div");
     const titre = document.createElement("p");
@@ -72,7 +72,9 @@ function mediaFactory(data) {
       const clickInfo = e.originalTarget;
       lightBox(image, video, clickInfo);
     });
-    imageContent.addEventListener("keydown", (e) => {
+
+    imageContent.firstChild.setAttribute("tabindex","0")
+    imageContent.firstChild.addEventListener("keydown", (e) => {
       if (e.key === "Enter") {
         const clickInfo = e.originalTarget;
         lightBox(image, video, clickInfo);
@@ -81,6 +83,7 @@ function mediaFactory(data) {
     coeur.addEventListener("keydown", (e) => {
       if (e.key === "Enter") {
         AddLike(like, coeur);
+        console.log("OUI");
       }
     });
     coeur.addEventListener("click", () => {
