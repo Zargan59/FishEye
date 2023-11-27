@@ -59,6 +59,9 @@ function keyPress(e) {
 function closeModal() {
   const modalBackground = document.querySelector(".contact_background");
   modalBackground.remove();
+  
+  const body = document.querySelector("body");
+  body.style.overflow = "visible";
 
   const modal = document.getElementById("contact_modal");
   modal.close();
