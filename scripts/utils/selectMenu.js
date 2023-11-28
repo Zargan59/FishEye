@@ -15,22 +15,23 @@ function SelectMenu(triContent, media) {
   div.setAttribute("tabindex", "-1");
 
   const option1 = document.createElement("button");
-  option1.setAttribute("aria-hidden", "false")
   option1.classList.add("firstOption");
   option1.setAttribute("tabindex", "-1");
+  option1.setAttribute("aria-hidden", "true")
   option1.innerHTML = pop;
   createChevron();
 
   const option2 = document.createElement("button");
   option2.innerHTML = date;
   option2.setAttribute("tabindex", "-1");
+  trueButton.setAttribute("aria-label" , option1.textContent)
+
   const option3 = document.createElement("button");
   option3.innerHTML = titre;
   option3.setAttribute("tabindex", "-1");
 
   const hr1 = document.createElement("hr");
   const hr2 = document.createElement("hr");
-  trueButton.setAttribute("aria-label" , option1.textContent )
 
 
   div.addEventListener("keydown", (e) => {
@@ -45,13 +46,12 @@ function SelectMenu(triContent, media) {
     const firstChoice = document.querySelector(".vraiButton");
     e.preventDefault();
     if (e.target !== firstChoice) {
-    trueButton.setAttribute("aria-label" , option1.textContent  )
 
       let prevChoice = option1.textContent;
       let choice = e.target.textContent;
       e.target.innerHTML = prevChoice;
       option1.innerHTML = choice;
-  trueButton.setAttribute("aria-label" , choice )
+      trueButton.setAttribute("aria-label" , choice )
 
       createChevron();
       CloseMenu();
@@ -75,7 +75,11 @@ function SelectMenu(triContent, media) {
     chevronIcon.classList.remove("close");
     menuOpen = true;
     option2.setAttribute("tabindex", "0");
+    option2.setAttribute("aria-label", option2.textContent)
+
+    option3.setAttribute("aria-label", option3.textContent)
     option3.setAttribute("tabindex", "0");
+
   }
 
   function CloseMenu() {
@@ -106,4 +110,5 @@ function SelectMenu(triContent, media) {
       CloseMenu();
     }
   }
+
 }

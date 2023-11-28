@@ -71,7 +71,7 @@ function closeModal() {
 
 function Soumission() {
   closeModal();
-  const firstName = document.querySelector("#Prénom");
+  const firstName = document.querySelector("#firstName");
   const lastName = document.querySelector("#LastName");
   const email = document.querySelector("#Email");
   const message = document.querySelector("#YourMessage");

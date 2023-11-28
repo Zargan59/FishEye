@@ -163,8 +163,6 @@ function closeLightbox() {
 }
 
 function loadImage(i) {
-  //Je reprends la div picture
-  //Je supprime son alt et sa src et je rajoute celle de n+1
   const mediaDiv = document.querySelector(".image");
   const media = mediaDiv.firstChild;
   if (info[i].type == "image") {
@@ -175,16 +173,17 @@ function loadImage(i) {
       image.setAttribute("alt", info[i].alt);
       mediaDiv.appendChild(image);
     }
-    media.src = info[i].source;
-    media.alt = info[i].title;
   } else {
     media.remove();
     const video = document.createElement("video");
     video.setAttribute("src", info[i].source);
+    video.setAttribute("alt",info[i].title )
     video.setAttribute("controls", " ");
 
     mediaDiv.appendChild(video);
   }
+  media.src = info[i].source;
+  media.alt = info[i].title;
   const title = document.querySelector(".title");
   title.innerHTML = info[i].title;
 }

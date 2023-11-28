@@ -114,6 +114,8 @@ function mediaFactory(data) {
       const movie = document.createElement("video");
       const moviePath = `${PhotoFolder}/${video}`;
       movie.setAttribute("src", moviePath);
+      movie.setAttribute("aria-describedby" , title);
+      movie.setAttribute("aria-label" , title + " vidéo");
       // movie.setAttribute("controls", " ")
       videoPath = {
         type: "video",
