@@ -57,7 +57,7 @@ function mediaFactory(data) {
     like.classList.add("nombreLike");
     like.innerHTML = `${likes}`;
     const coeur = document.createElement("img");
-    coeur.setAttribute("src", "assets/icons/coeur.svg");
+    coeur.setAttribute("src", "assets/icons/Coeur.svg");
     coeur.setAttribute("alt", "Likes");
     coeur.setAttribute("tabindex", "0");
 
