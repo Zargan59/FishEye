@@ -1,4 +1,6 @@
 function lightBox(image, video) {
+
+  document.addEventListener("keypress", keyPressLightBox)
   let media = image;
   if (image == undefined) {
     media = video;
@@ -21,9 +23,10 @@ function lightBox(image, video) {
 }
 
 function keyPressLightBox(e) {
-  if (e.keyCode === 39) {
+  console.log(e);
+  if (e.key === "ArrowRight") {
     NextPicture();
-  } else if (e.keyCode === 37) {
+  } else if (e.key === "ArrowLeft") {
     PreviousPicture();
   } else if (e.key === "Escape") {
     closeLightbox();
@@ -35,6 +38,7 @@ function constructorLightBox(mediaClicked) {
   main.setAttribute("aria-hidden","true")
   const body = document.querySelector("body");
   body.style.overflow = "hidden";
+  // body.setAttribute('aria-hidden',"true")
   const lightBoxContent = document.createElement("div");
   lightBoxContent.classList.add("lightBoxContent");
 
@@ -44,6 +48,7 @@ function constructorLightBox(mediaClicked) {
   // rajouter une div contenant l'image
   const mediaDiv = document.createElement("div");
   mediaDiv.classList.add("pictureContent");
+  mediaDiv.setAttribute("tabindex","0")
 
   const mediaContent = document.createElement("div");
   mediaContent.classList.add("image");
